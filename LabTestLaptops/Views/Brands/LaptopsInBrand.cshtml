@@ -1,0 +1,19 @@
+﻿@model LabTestLaptops.Brand
+
+@{
+    ViewBag.Title = "LaptopsInBrand";
+}
+
+<h2>Laptops In Brand</h2>
+ <ul>
+     @foreach(Laptop l in Model.Laptops)
+     {
+     <li>
+         @l.Make
+          (@l.QuantityAvailable)
+         <div>
+            @Html.ActionLink("Buy this Laptop", "BuyLaptop", new { id = l.ID})
+         </div>
+     </li>
+     }
+ </ul>

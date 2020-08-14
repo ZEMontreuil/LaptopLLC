@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Select Brand";
+}
+
+<h2>Select a Brand</h2>
+
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.DropDownList("BrandID", "Select Brand")
+    </p>
+    <input type="submit" value="Submit" />
+}

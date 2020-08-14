@@ -1,0 +1,54 @@
+﻿@model LabTestLaptops.Laptop
+
+@{
+    ViewBag.Title = "BuyLaptop";
+}
+
+<h2>BuyLaptop</h2>
+
+<div>
+    <h4>Laptop</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Make)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Make)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DollarValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DollarValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantityAvailable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantityAvailable)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Brand.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brand.Name)
+        </dd>
+    </dl>
+</div>
+<p>
+    @using (Html.BeginForm())
+    {
+        @Html.Hidden("LaptopId", Model.ID)
+        @Html.DropDownList("UserID", "Select User")
+        @Html.TextBox("Quantity")
+        <input type="submit" value="BUY" />
+    }
+</p>
